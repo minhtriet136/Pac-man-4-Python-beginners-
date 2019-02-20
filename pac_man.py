@@ -110,39 +110,42 @@ def prettify_map(array):
                 converted_line += a
             converted_array.append(converted_line)
 
-    # final_array = []
-    # for l in range(len(converted_array)):
-    #     converted_line = ''
-    #     if l == len(converted_array) -1:
-    #         for i in range (len(converted_array[l])):
-    #             a = converted_array[l]
-    #             if i == (len(converted_array[l])-1):
-    #                 if a == '║' and converted_array[l-1][i] == '║':
-    #                     a = a.replace('║', '╝')
-    #             converted_line += a
-    #         final_array.append(converted_line)
-    #     elif l == 0:
-    #         for i in range (len(converted_array[l])):
-    #             a = converted_array[l]
-    #             if i == (len(converted_array[l])-1):
-    #                     if a == '║' and converted_array[l][i-1] == '═' and converted_array[l+1][i] == '║':
-    #                         a = a.replace('║', '╗')
-    #             converted_line += a
-    #         final_array.append(converted_line)
-    #     else:
-    #         for i in range (len(converted_array[l])):
-    #             a = converted_array[l][i]
-    #             if i == (len(converted_array[l])-1):
-    #                 if a == '═' and converted_array[l][i-1] == '═' and converted_array[l-1][i] == '║' and converted_array[l+1][i] != '║':
-    #                     a = a.replace('═', '╝')
-    #                 elif a == '═' and converted_array[l][i-1] == '═' and converted_array[l+1][i] == '║' and converted_array[l-1][i] != '║':
-    #                     a = a.replace('═', '╗')
-    #                 elif a == '║' and converted_array[l][i-1] == '═' and converted_array[l-1][i] == '║':
-    #                     a = a.replace('║', '╝')
-    #                 # elif a == '║' and converted_array2[l][i-1] == '═' and converted_array2[l-1][i] == '║' and converted_array2[l+1][i] == '║':
-    #                 #     a = a.replace('║', '╗')
-    #             converted_line += a
-    #         final_array.append(converted_line)
+# Fix the outline fail:
+'''
+    final_array = []
+    for l in range(len(converted_array)):
+        converted_line = ''
+        if l == len(converted_array) -1:
+            for i in range (len(converted_array[l])):
+                a = converted_array[l]
+                if i == (len(converted_array[l])-1):
+                    if a == '║' and converted_array[l-1][i] == '║':
+                        a = a.replace('║', '╝')
+                converted_line += a
+            final_array.append(converted_line)
+        elif l == 0:
+            for i in range (len(converted_array[l])):
+                a = converted_array[l]
+                if i == (len(converted_array[l])-1):
+                        if a == '║' and converted_array[l][i-1] == '═' and converted_array[l+1][i] == '║':
+                            a = a.replace('║', '╗')
+                converted_line += a
+            final_array.append(converted_line)
+        else:
+            for i in range (len(converted_array[l])):
+                a = converted_array[l][i]
+                if i == (len(converted_array[l])-1):
+                    if a == '═' and converted_array[l][i-1] == '═' and converted_array[l-1][i] == '║' and converted_array[l+1][i] != '║':
+                        a = a.replace('═', '╝')
+                    elif a == '═' and converted_array[l][i-1] == '═' and converted_array[l+1][i] == '║' and converted_array[l-1][i] != '║':
+                        a = a.replace('═', '╗')
+                    elif a == '║' and converted_array[l][i-1] == '═' and converted_array[l-1][i] == '║':
+                        a = a.replace('║', '╝')
+                    # elif a == '║' and converted_array2[l][i-1] == '═' and converted_array2[l-1][i] == '║' and converted_array2[l+1][i] == '║':
+                    #     a = a.replace('║', '╗')
+                converted_line += a
+            final_array.append(converted_line)
+'''
     return converted_array
 
 
